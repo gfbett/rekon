@@ -610,7 +610,9 @@ RiakObject.prototype.store = function(callback) {
               for (prop in object.metadata) {
                 req.setRequestHeader('X-Riak-Meta-' + prop, object.metadata[prop]);
               }
-
+              for (prop in object.indexes) {
+                req.setRequestHeader('x-riak-index-' + prop, object.indexes[prop]);
+              }
 
             },
     complete: function(req, statusText) { object._store(req, callback); } });
