@@ -431,7 +431,7 @@ RiakObject.prototype.setMetadata = function(all_headers) {
     if (header.indexOf('X-Riak-Meta-') == 0) {
       colon = header.indexOf(':');
       k = header.substring('X-Riak-Meta-'.length, colon);
-      v = header.substring(colon + 1, header.length )
+      v = header.substring(colon + 1, header.length ).trim();
       results[k] = v;
     }
   }
@@ -601,12 +601,17 @@ RiakObject.prototype.store = function(callback) {
           dataType: 'multipart',
     beforeSend: function(req) { req.setRequestHeader('X-Riak-ClientId', object.client.clientId);
               if (object.vclock !== undefined && object.vclock !== null) {
-          req.setRequestHeader('X-Riak-Vclock', object.vclock);
+                req.setRequestHeader('X-Riak-Vclock', object.vclock);
               }
               var linkHeader = object.getLinkHeader();
               if (linkHeader !== '') {
-          req.setRequestHeader('Link', linkHeader);
+                req.setRequestHeader('Link', linkHeader);
               }
+              for (prop in object.metadata) {
+                req.setRequestHeader('X-Riak-Meta-' + prop, object.metadata[prop]);
+              }
+
+
             },
     complete: function(req, statusText) { object._store(req, callback); } });
 };
