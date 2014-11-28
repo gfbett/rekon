@@ -19,18 +19,18 @@
 <tr>
   <th>Secondary Indexes</th>
   <td>
-    <pre><%= JSON.stringify(object.indexes) %></pre>
+    <pre><%! hljs.highlightAuto(JSON.stringify(object.indexes, null, 4)).value %></pre>
   </td>
 </tr>
 <tr>
   <th>Links</th>
   <td>
-    <pre><%= JSON.stringify(object.links) %></pre>
+    <pre><%! hljs.highlightAuto(JSON.stringify(object.links, null, 4)).value %></pre>
   </td>
 </tr>
 <tr>
   <th>Metadata</th>
   <td>
-    <pre><%= JSON.stringify(object.metadata) %></pre>
+    <pre><%! hljs.highlightAuto(JSON.stringify(object.metadata, null, 4)).value %></pre>
   </td>
 </tr>

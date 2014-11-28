@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>rekon v1.0.3</title>
+    <title>rekon v1.0.4</title>
     <link href='screen.css' media='screen, projection' rel='stylesheet' type='text/css' />
     <link rel="icon" type="image/png" href="riaklogo.png">
     <link rel="stylesheet" href="highlight-default.css">
@@ -18,7 +18,7 @@
   <body>
     <div id='container'>
       <div id='home'>
-        <a href='#'>rekon <code>1.0.3</code></a>
+        <a href='#'>rekon <code>1.0.4</code></a>
       </div>
       <div id='content'>
         <h1></h1>
