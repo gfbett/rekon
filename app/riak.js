@@ -413,10 +413,11 @@ RiakObject.prototype.setIndexes = function(all_headers) {
   headers_by_line = all_headers.split('\n');
   results = {}
   for (i = 0; i < headers_by_line.length; i++) {
-    if (headers_by_line[i].indexOf('x-riak-index-') == 0) {
-      index = headers_by_line[i].split(':');
-      k = index[0].substring('x-riak-index-'.length, index[0].length);
-      v = index[1].trim();
+    var index = headers_by_line[i];
+    if (index.indexOf('x-riak-index-') == 0) {
+      colon = index.indexOf(':');
+      k = index.substring('x-riak-index-'.length, colon);
+      v = index.substring(colon + 1, index.length).trim();
       results[k] = v;
     }
   }
