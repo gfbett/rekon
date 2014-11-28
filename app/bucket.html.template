@@ -1,15 +1,15 @@
 <div id="bucket" class="screen">
-  <table id="keys"> 
+  <table id="keys" class="wide">
     <thead> 
       <tr> 
         <th>
           <input id="row_search" type="text" />
           <em class="hint">Type to filter rows</em>
         </th> 
-        <th>View</th> 
-        <th>Riak</th> 
-        <th>Edit</th> 
-        <th>Delete</th> 
+        <th class="narrow">View</th>
+        <th class="narrow">Riak</th>
+        <th class="narrow">Edit</th>
+        <th class="narrow">Delete</th>
       </tr> 
     </thead> 
     <tbody>

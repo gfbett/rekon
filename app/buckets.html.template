@@ -1,14 +1,14 @@
 <div id="buckets" class="screen">
-  <table> 
+  <table class="wide">
     <thead> 
       <tr> 
         <th>
           <input id="row_search" type="text" />
           <em class="hint">filter results</em>
         </th> 
-        <th>Keys</th> 
-        <th>Props</th>
-        <th>Riak</th> 
+        <th class="narrow">Keys</th>
+        <th class="narrow">Props</th>
+        <th class="narrow">Riak</th>
       </tr> 
     </thead> 
     <tbody> 
