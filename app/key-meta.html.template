@@ -17,20 +17,23 @@
   </td>
 </tr>
 <tr>
-  <th>Secondary Indexes</th>
+  <th onclick="$('#SIToggle').slideToggle('fast');$('#SIPlace').slideToggle('fast')">Secondary Indexes</th>
   <td>
-    <pre><%! hljs.highlightAuto(JSON.stringify(object.indexes, null, 4)).value %></pre>
+    <pre id="SIPlace">...</pre>
+    <pre id="SIToggle" class="toggle"><%! hljs.highlightAuto(JSON.stringify(object.indexes, null, 4)).value %></pre>
   </td>
 </tr>
 <tr>
-  <th>Links</th>
+  <th onclick="$('#LinksToggle').slideToggle('fast');$('#LinksPlace').slideToggle('fast')">Links</th>
   <td>
-    <pre><%! hljs.highlightAuto(JSON.stringify(object.links, null, 4)).value %></pre>
+    <pre id="LinksPlace">...</pre>
+    <pre id="LinksToggle" class="toggle"><%! hljs.highlightAuto(JSON.stringify(object.links, null, 4)).value %></pre>
   </td>
 </tr>
 <tr>
-  <th>Metadata</th>
+  <th onclick="$('#MetaToggle').slideToggle('fast');$('#MetaPlace').slideToggle('fast'); " >Metadata</th>
   <td>
-    <pre><%! hljs.highlightAuto(JSON.stringify(object.metadata, null, 4)).value %></pre>
+    <pre id="MetaPlace">...</pre>
+    <pre id="MetaToggle" class="toggle"><%! hljs.highlightAuto(JSON.stringify(object.metadata, null, 4)).value %></pre>
   </td>
 </tr>

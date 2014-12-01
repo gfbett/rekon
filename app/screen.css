@@ -40,6 +40,10 @@ table th.narrow {
   text-align: center;
 }
 
+table th.narrow_left {
+  width:40px;
+  text-align: left;
+}
 
 table th {
   font-weight:bold;
@@ -272,3 +276,7 @@ em.hint {
 .clearfix{display:inline-block;}
 html[xmlns] .clearfix{display:block;}
 * html .clearfix{height:1%;}
+
+pre.toggle {
+  display:none;
+}
