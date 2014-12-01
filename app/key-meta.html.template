@@ -19,21 +19,21 @@
 <tr>
   <th onclick="$('#SIToggle').slideToggle('fast');$('#SIPlace').slideToggle('fast')">Secondary Indexes</th>
   <td>
-    <pre id="SIPlace">...</pre>
+    <pre id="SIPlace"><%! JSON.stringify(object.indexes) %></pre>
     <pre id="SIToggle" class="toggle"><%! hljs.highlightAuto(JSON.stringify(object.indexes, null, 4)).value %></pre>
   </td>
 </tr>
 <tr>
   <th onclick="$('#LinksToggle').slideToggle('fast');$('#LinksPlace').slideToggle('fast')">Links</th>
   <td>
-    <pre id="LinksPlace">...</pre>
+    <pre id="LinksPlace"><%! JSON.stringify(object.links) %></pre>
     <pre id="LinksToggle" class="toggle"><%! hljs.highlightAuto(JSON.stringify(object.links, null, 4)).value %></pre>
   </td>
 </tr>
 <tr>
   <th onclick="$('#MetaToggle').slideToggle('fast');$('#MetaPlace').slideToggle('fast'); " >Metadata</th>
   <td>
-    <pre id="MetaPlace">...</pre>
+    <pre id="MetaPlace"><%! JSON.stringify(object.metadata) %></pre>
     <pre id="MetaToggle" class="toggle"><%! hljs.highlightAuto(JSON.stringify(object.metadata, null, 4)).value %></pre>
   </td>
 </tr>
