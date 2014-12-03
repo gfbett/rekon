@@ -1,0 +1,39 @@
+<tr>
+  <th>VClock</th>
+  <td>
+    <pre><%= object.vclock %></pre>
+  </td>
+</tr>
+<tr>
+  <th>ETag</th>
+  <td>
+    <pre><%= object.etag %></pre>
+  </td>
+</tr>
+<tr>
+  <th>Last Modified</th>
+  <td>
+    <pre><%= object.lastModified %></pre>
+  </td>
+</tr>
+<tr>
+  <th onclick="$('#SIToggle').slideToggle('fast');$('#SIPlace').slideToggle('fast')">Secondary Indexes</th>
+  <td>
+    <pre id="SIPlace"><%! JSON.stringify(object.indexes) %></pre>
+    <pre id="SIToggle" class="toggle"><textarea id="edit_index" name="indexes"><%! JSON.stringify(object.indexes, null, 4) %></textarea></pre>
+  </td>
+</tr>
+<tr>
+  <th onclick="$('#LinksToggle').slideToggle('fast');$('#LinksPlace').slideToggle('fast')">Links</th>
+  <td>
+    <pre id="LinksPlace"><%! JSON.stringify(object.links) %></pre>
+    <pre id="LinksToggle" class="toggle"><%! hljs.highlightAuto(JSON.stringify(object.links, null, 4)).value %></pre>
+  </td>
+</tr>
+<tr>
+  <th onclick="$('#MetaToggle').slideToggle('fast');$('#MetaPlace').slideToggle('fast'); " >Metadata</th>
+  <td>
+    <pre id="MetaPlace"><%! JSON.stringify(object.metadata) %></pre>
+    <pre id="MetaToggle" class="toggle"><textarea id="edit_meta" name="metadata"><%! JSON.stringify(object.metadata, null, 4) %></textarea></pre>
+  </td>
+</tr>

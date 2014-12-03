@@ -185,7 +185,7 @@ rekonApp = Sammy('#container', function(){
         break;
       }
       context.render('edit-key-content-type.html.template', {object: object}, function(html){
-        context.render('key-meta.html.template', {object: object}).appendTo('#edit-key tbody');
+        context.render('edit-key-meta.html.template', {object: object}).appendTo('#edit-key tbody');
       }).appendTo('#edit-key tbody').then(function(html){
         $select = $('select[name=content-type]');
         $select.val(object.contentType);
@@ -252,6 +252,8 @@ rekonApp = Sammy('#container', function(){
     bucket.get(key, function(status, object) {
       object.contentType = app.params['content-type'];
       object.body        = app.params['value'];
+      object.metadata    = JSON.parse(app.params['metadata']);
+      object.indexes     = JSON.parse(app.params['indexes']);
 
       if (object.contentType == 'application/json') {
         object.body = JSON.parse(object.body);

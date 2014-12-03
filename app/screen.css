@@ -256,14 +256,21 @@ label[for=row_search] {
   font-weight:normal;
 }
 
-#edit_key {
+#edit_key,
+#edit_meta,
+#edit_index {
   border:1px solid #ccc;
   font-family: 'DejaVu Sans Mono', Monaco, 'Courier New';
   line-height:1.6em;
   font-size:0.9em;
   margin-top:15px;
-  height:400px;
   width:940px;
+  height:100%;
+  min-height:100px;
+}
+
+#edit_key {
+  min-height:400px;
 }
 
 em.hint {
